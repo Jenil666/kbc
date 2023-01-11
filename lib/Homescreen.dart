@@ -9,38 +9,77 @@ class Homescreen extends StatefulWidget {
 }
 
 class _HomescreenState extends State<Homescreen> {
-
-  List Questions=["1.Who is Peterolium Minister in 2000 in India",
+  List Questions = [
+    "1.Who is Peterolium Minister in 2000 in India",
     "2.Who is 1st Female Pm of India",
     "3.Which one of the following river flows between Vindhyan and Satpura ranges?",
     "4.The Central Rice Research Station is situated in?",
     "5.Who among the following wrote Sanskrit grammar?",
   ];
-  List Ans=["Hardeep Singh Puri","Indira Gandhi","Narmada","Cuttack","Panini",];
+  List Ans = [
+    "Hardeep Singh Puri",
+    "Indira Gandhi",
+    "Narmada",
+    "Cuttack",
+    "Panini",
+  ];
 
+  List OptA = [
+    "Narandre Modi",
+    "Indira Gandhi",
+    "Narmada",
+    "Chennai",
+    "Kalidasa",
+  ];
+  List OptB = [
+    "Rahul Gamdhi",
+    "Rekha",
+    "Mahanadi",
+    "Cuttack",
+    "Charak",
+  ];
+  List OptC = [
+    "Akshar Kumar",
+    "Srusti",
+    "Son",
+    "Bangalore",
+    "Panini",
+  ];
+  List OptD = [
+    "Hardeep Singh Puri",
+    "Sarasvati",
+    "Netravati",
+    "Quilon",
+    "Aryabhatt",
+  ];
 
-  List OptA=["Narandre Modi","Indira Gandhi","Narmada","Chennai","Kalidasa",];
-  List OptB=["Rahul Gamdhi","Rekha","Mahanadi","Cuttack","Charak",];
-  List OptC=["Akshar Kumar","Srusti","Son","Bangalore","Panini",];
-  List OptD=["Hardeep Singh Puri","Sarasvati","Netravati","Quilon","Aryabhatt",];
+  List UserAns = [];
 
-  List UserAns=[];
-
-  int i=0;
+  int i = 0;
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child:
-        Scaffold(
-          body: Column(
-            children: [
-              Expanded(flex:1,child: Container(
+    return SafeArea(
+        child: Scaffold(
+      body: Column(
+        children: [
+          Expanded(
+              flex: 1,
+              child: Container(
                 padding: EdgeInsets.all(10),
                 color: Color(0xffDC2FFF),
                 alignment: Alignment.center,
-                child: Text("${Questions[i]}",style: TextStyle(fontSize: 30,color: Colors.black,fontWeight: FontWeight.bold),),
+                child: Text(
+                  "${Questions[i]}",
+                  style: TextStyle(
+                      fontSize: 30,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold),
+                ),
               )),
-              Expanded(flex:1,child: Container(
+          Expanded(
+              flex: 1,
+              child: Container(
                 color: Colors.black,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -48,19 +87,17 @@ class _HomescreenState extends State<Homescreen> {
                     Row(
                       children: [
                         Expanded(
-                          flex:1,
+                          flex: 1,
                           child: InkWell(
-                            onTap: (){
+                            onTap: () {
                               Navigator.pushNamed(context, 'ver');
                               setState(() {
-                                if(i<4)
-                                  {
-                                    i++;
-                                  }
-                                else
-                                  {
-                                    Navigator.pushReplacementNamed(context, 'final');
-                                  }
+                                if (i < 4) {
+                                  i++;
+                                } else {
+                                  Navigator.pushReplacementNamed(
+                                      context, 'final');
+                                }
                               });
                             },
                             child: Container(
@@ -71,25 +108,29 @@ class _HomescreenState extends State<Homescreen> {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               alignment: Alignment.center,
-                              child: Text("${OptA[i]}",style: TextStyle(color: Colors.grey),),
+                              child: Text(
+                                "${OptA[i]}",
+                                style: TextStyle(color: Colors.grey),
+                              ),
                             ),
                           ),
                         ),
-                        SizedBox(width: 15,),
+                        SizedBox(
+                          width: 15,
+                        ),
                         Expanded(
                           flex: 1,
                           child: InkWell(
-                            onTap: (){
+                            onTap: () {
                               Navigator.pushNamed(context, 'ver');
                               setState(() {
-                                if(i<4)
-                                {
+                                if (i < 4) {
                                   i++;
+                                } else {
+                                  Navigator.pushReplacementNamed(
+                                      context, 'final');
                                 }
-                                else
-                                {
-                                  Navigator.pushReplacementNamed(context, 'final');
-                                }});
+                              });
                             },
                             child: Container(
                               margin: EdgeInsets.only(right: 10),
@@ -99,28 +140,31 @@ class _HomescreenState extends State<Homescreen> {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               alignment: Alignment.center,
-                              child: Text("${OptB[i]}",style: TextStyle(color: Colors.grey),),
+                              child: Text(
+                                "${OptC[i]}",
+                                style: TextStyle(color: Colors.grey),
+                              ),
                             ),
                           ),
                         ),
                       ],
                     ),
-                    SizedBox(height: 20,),
+                    SizedBox(
+                      height: 20,
+                    ),
                     Row(
                       children: [
                         Expanded(
-                          flex:1,
+                          flex: 1,
                           child: InkWell(
-                            onTap: (){
+                            onTap: () {
                               Navigator.pushNamed(context, 'ver');
                               setState(() {
-                                if(i<4)
-                                {
+                                if (i < 4) {
                                   i++;
-                                }
-                                else
-                                {
-                                  Navigator.pushReplacementNamed(context, 'final');
+                                } else {
+                                  Navigator.pushReplacementNamed(
+                                      context, 'final');
                                 }
                               });
                             },
@@ -132,24 +176,27 @@ class _HomescreenState extends State<Homescreen> {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               alignment: Alignment.center,
-                              child: Text("${OptA[i]}",style: TextStyle(color: Colors.grey),),
+                              child: Text(
+                                "${OptB[i]}",
+                                style: TextStyle(color: Colors.grey),
+                              ),
                             ),
                           ),
                         ),
-                        SizedBox(width: 15,),
+                        SizedBox(
+                          width: 15,
+                        ),
                         Expanded(
                           flex: 1,
                           child: InkWell(
-                            onTap: (){
+                            onTap: () {
                               Navigator.pushNamed(context, 'ver');
                               setState(() {
-                                if(i<4)
-                                {
+                                if (i < 4) {
                                   i++;
-                                }
-                                else
-                                {
-                                  Navigator.pushReplacementNamed(context, 'final');
+                                } else {
+                                  Navigator.pushReplacementNamed(
+                                      context, 'final');
                                 }
                               });
                             },
@@ -161,18 +208,35 @@ class _HomescreenState extends State<Homescreen> {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               alignment: Alignment.center,
-                              child: Text("${OptB[i]}",style: TextStyle(color: Colors.grey),),
+                              child: Text(
+                                "${OptD[i]}",
+                                style: TextStyle(color: Colors.grey),
+                              ),
                             ),
                           ),
                         ),
                       ],
                     ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Visibility(
+                      visible: i==4?true:false,
+                      child: ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              i=0;
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                              disabledForegroundColor: Colors.purple),
+                          child: Center(child: Text("Reset",style: TextStyle(fontSize: 20),),)),
+                    )
                   ],
                 ),
               )),
-            ],
-          ),
-        )
-    );
+        ],
+      ),
+    ));
   }
 }

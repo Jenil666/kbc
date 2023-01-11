@@ -11,7 +11,7 @@ void main()
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-     initialRoute: L,
+     //initialRoute: L,
     routes: {
       '/':(context)=>Homescreen(),
       'ver':(context)=>loose(),
