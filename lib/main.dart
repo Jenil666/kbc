@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kbd/Filalprice.dart';
 import 'package:kbd/Homescreen.dart';
+import 'package:kbd/Wan.dart';
 import 'package:kbd/loose.dart';
 
 void main()
@@ -16,6 +17,8 @@ void main()
       '/':(context)=>Homescreen(),
       'ver':(context)=>loose(),
       'final':(context)=>Finalprize(),
+      'loose':(context)=>loose(),
+      'won':(context)=>Wan(),
     },
   ),
   );

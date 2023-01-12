@@ -32,7 +32,7 @@ class _HomescreenState extends State<Homescreen> {
     "Kalidasa",
   ];
   List OptB = [
-    "Rahul Gamdhi",
+    "Rahul Gandhi",
     "Rekha",
     "Mahanadi",
     "Cuttack",
@@ -90,13 +90,17 @@ class _HomescreenState extends State<Homescreen> {
                           flex: 1,
                           child: InkWell(
                             onTap: () {
-                              Navigator.pushNamed(context, 'ver');
+                              UserAns.add("${OptA[i]}");
+                               if(UserAns[i] == Ans[i]) {
+                                 Navigator.pushNamed(context, 'won');
+                               }
+                               else
+                                 {
+                                   Navigator.pushNamed(context, 'loose');
+                                 }
                               setState(() {
                                 if (i < 4) {
                                   i++;
-                                } else {
-                                  Navigator.pushReplacementNamed(
-                                      context, 'final');
                                 }
                               });
                             },
@@ -122,6 +126,15 @@ class _HomescreenState extends State<Homescreen> {
                           flex: 1,
                           child: InkWell(
                             onTap: () {
+                              UserAns.add("${OptC[i]}");
+
+                              if(UserAns[i] == Ans[i]) {
+                                Navigator.pushNamed(context, 'won');
+                              }
+                              else
+                              {
+                                Navigator.pushNamed(context, 'loose');
+                              }
                               Navigator.pushNamed(context, 'ver');
                               setState(() {
                                 if (i < 4) {
@@ -158,6 +171,15 @@ class _HomescreenState extends State<Homescreen> {
                           flex: 1,
                           child: InkWell(
                             onTap: () {
+                              UserAns.add("${OptB[i]}");
+
+                              if(UserAns[i] == Ans[i]) {
+                                Navigator.pushNamed(context, 'won');
+                              }
+                              else
+                              {
+                                Navigator.pushNamed(context, 'loose');
+                              }
                               Navigator.pushNamed(context, 'ver');
                               setState(() {
                                 if (i < 4) {
@@ -190,13 +212,18 @@ class _HomescreenState extends State<Homescreen> {
                           flex: 1,
                           child: InkWell(
                             onTap: () {
-                              Navigator.pushNamed(context, 'ver');
+                              UserAns.add("${OptD[i]}");
+
+                              if(UserAns[i] == Ans[i]) {
+                                Navigator.pushNamed(context, 'won');
+                              }
+                              else
+                              {
+                                Navigator.pushNamed(context, 'loose');
+                              }
                               setState(() {
                                 if (i < 4) {
                                   i++;
-                                } else {
-                                  Navigator.pushReplacementNamed(
-                                      context, 'final');
                                 }
                               });
                             },
