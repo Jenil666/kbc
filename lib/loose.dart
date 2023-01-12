@@ -14,6 +14,17 @@ class _looseState extends State<loose> {
     return SafeArea(
         child: Scaffold(
           appBar: AppBar(backgroundColor: Colors.red,),
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(child: Text("You Ticked wrong Answer !!!",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)),
+              Center(
+                child: ElevatedButton(onPressed: (){
+                  Navigator.pushNamed(context, '/');
+                },style: ElevatedButton.styleFrom(backgroundColor: Colors.red), child: Text('Restart',style: TextStyle(fontSize: 20),)),
+              ),
+            ],
+          )
         ));
   }
 }

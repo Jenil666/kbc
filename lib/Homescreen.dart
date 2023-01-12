@@ -9,6 +9,8 @@ class Homescreen extends StatefulWidget {
 }
 
 class _HomescreenState extends State<Homescreen> {
+
+  bool t=false;
   List Questions = [
     "1.Who is Peterolium Minister in 2000 in India",
     "2.Who is 1st Female Pm of India",
@@ -55,7 +57,7 @@ class _HomescreenState extends State<Homescreen> {
 
   List UserAns = [];
 
-  int i = 0;
+  int i = 0,j=0;
 
   @override
   Widget build(BuildContext context) {
@@ -90,19 +92,30 @@ class _HomescreenState extends State<Homescreen> {
                           flex: 1,
                           child: InkWell(
                             onTap: () {
-                              UserAns.add("${OptA[i]}");
-                               if(UserAns[i] == Ans[i]) {
-                                 Navigator.pushNamed(context, 'won');
-                               }
-                               else
-                                 {
-                                   Navigator.pushNamed(context, 'loose');
-                                 }
-                              setState(() {
-                                if (i < 4) {
-                                  i++;
-                                }
-                              });
+                              if(j<6)
+                              {
+                                UserAns.add("${OptA[i]}");
+                                setState(() {
+                                  if(UserAns[i] == Ans[i]) {
+                                    Navigator.pushNamed(context, 'won');
+                                    if(i<4)
+                                    {
+                                      i++;
+                                      j++;
+                                    }
+                                    if(i==4) {
+                                      j++;
+                                    }
+                                  }
+                                  else
+                                  {
+                                    Navigator.pushNamed(context, 'loose');
+                                    i=0;
+                                    j=0;
+                                    UserAns.clear();
+                                  }
+                                });
+                              }
                             },
                             child: Container(
                               margin: EdgeInsets.only(left: 10),
@@ -113,7 +126,7 @@ class _HomescreenState extends State<Homescreen> {
                               ),
                               alignment: Alignment.center,
                               child: Text(
-                                "${OptA[i]}",
+                                "A.${OptA[i]}",
                                 style: TextStyle(color: Colors.grey),
                               ),
                             ),
@@ -126,24 +139,30 @@ class _HomescreenState extends State<Homescreen> {
                           flex: 1,
                           child: InkWell(
                             onTap: () {
-                              UserAns.add("${OptC[i]}");
-
-                              if(UserAns[i] == Ans[i]) {
-                                Navigator.pushNamed(context, 'won');
-                              }
-                              else
+                              if(j<6)
                               {
-                                Navigator.pushNamed(context, 'loose');
+                                UserAns.add("${OptB[i]}");
+                                setState(() {
+                                  if(UserAns[i] == Ans[i]) {
+                                    Navigator.pushNamed(context, 'won');
+                                    if(i<4)
+                                    {
+                                      i++;
+                                      j++;
+                                    }
+                                    if(i==4) {
+                                      j++;
+                                    }
+                                  }
+                                  else
+                                  {
+                                    Navigator.pushNamed(context, 'loose');
+                                    i=0;
+                                    j=0;
+                                    UserAns.clear();
+                                  }
+                                });
                               }
-                              Navigator.pushNamed(context, 'ver');
-                              setState(() {
-                                if (i < 4) {
-                                  i++;
-                                } else {
-                                  Navigator.pushReplacementNamed(
-                                      context, 'final');
-                                }
-                              });
                             },
                             child: Container(
                               margin: EdgeInsets.only(right: 10),
@@ -154,7 +173,7 @@ class _HomescreenState extends State<Homescreen> {
                               ),
                               alignment: Alignment.center,
                               child: Text(
-                                "${OptC[i]}",
+                                "C.${OptB[i]}",
                                 style: TextStyle(color: Colors.grey),
                               ),
                             ),
@@ -171,24 +190,31 @@ class _HomescreenState extends State<Homescreen> {
                           flex: 1,
                           child: InkWell(
                             onTap: () {
-                              UserAns.add("${OptB[i]}");
-
-                              if(UserAns[i] == Ans[i]) {
-                                Navigator.pushNamed(context, 'won');
-                              }
-                              else
+                              if(j<6)
                               {
-                                Navigator.pushNamed(context, 'loose');
+                                UserAns.add("${OptC[i]}");
+
+                                setState(() {
+                                  if(UserAns[i] == Ans[i]) {
+                                    Navigator.pushNamed(context, 'won');
+                                    if(i<4)
+                                    {
+                                      i++;
+                                      j++;
+                                    }
+                                    if(i==4) {
+                                      j++;
+                                    }
+                                  }
+                                  else
+                                  {
+                                    Navigator.pushNamed(context, 'loose');
+                                    i=0;
+                                    j=0;
+                                    UserAns.clear();
+                                  }
+                                });
                               }
-                              Navigator.pushNamed(context, 'ver');
-                              setState(() {
-                                if (i < 4) {
-                                  i++;
-                                } else {
-                                  Navigator.pushReplacementNamed(
-                                      context, 'final');
-                                }
-                              });
                             },
                             child: Container(
                               margin: EdgeInsets.only(left: 10),
@@ -199,7 +225,7 @@ class _HomescreenState extends State<Homescreen> {
                               ),
                               alignment: Alignment.center,
                               child: Text(
-                                "${OptB[i]}",
+                                "B.${OptC[i]}",
                                 style: TextStyle(color: Colors.grey),
                               ),
                             ),
@@ -212,20 +238,31 @@ class _HomescreenState extends State<Homescreen> {
                           flex: 1,
                           child: InkWell(
                             onTap: () {
-                              UserAns.add("${OptD[i]}");
+                              if(j<6)
+                                {
+                                  UserAns.add("${OptD[i]}");
 
-                              if(UserAns[i] == Ans[i]) {
-                                Navigator.pushNamed(context, 'won');
-                              }
-                              else
-                              {
-                                Navigator.pushNamed(context, 'loose');
-                              }
-                              setState(() {
-                                if (i < 4) {
-                                  i++;
+                                  setState(() {
+                                    if(UserAns[i] == Ans[i]) {
+                                      Navigator.pushNamed(context, 'won');
+                                      if(i<4)
+                                      {
+                                        i++;
+                                        j++;
+                                      }
+                                      if(i==4) {
+                                        j++;
+                                      }
+                                    }
+                                    else
+                                    {
+                                      Navigator.pushNamed(context, 'loose');
+                                      i=0;
+                                      j=0;
+                                      UserAns.clear();
+                                    }
+                                  });
                                 }
-                              });
                             },
                             child: Container(
                               margin: EdgeInsets.only(right: 10),
@@ -236,7 +273,7 @@ class _HomescreenState extends State<Homescreen> {
                               ),
                               alignment: Alignment.center,
                               child: Text(
-                                "${OptD[i]}",
+                                "D.${OptD[i]}",
                                 style: TextStyle(color: Colors.grey),
                               ),
                             ),
@@ -248,15 +285,17 @@ class _HomescreenState extends State<Homescreen> {
                       height: 30,
                     ),
                     Visibility(
-                      visible: i==4?true:false,
+                      visible: j>=6?true:false,
                       child: ElevatedButton(
                           onPressed: () {
                             setState(() {
+                              j=0;
                               i=0;
+                              UserAns.clear();
                             });
                           },
                           style: ElevatedButton.styleFrom(
-                              disabledForegroundColor: Colors.purple),
+                              backgroundColor: Colors.purple),
                           child: Center(child: Text("Reset",style: TextStyle(fontSize: 20),),)),
                     )
                   ],
