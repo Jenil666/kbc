@@ -55,6 +55,7 @@ class _HomescreenState extends State<Homescreen> {
     "Aryabhatt",
   ];
 
+  List<Color> c=[Colors.yellow,Colors.red,Colors.purple,Colors.pink,Colors.white];
   List UserAns = [];
 
   int i = 0,j=0;
@@ -69,7 +70,7 @@ class _HomescreenState extends State<Homescreen> {
               flex: 1,
               child: Container(
                 padding: EdgeInsets.all(10),
-                color: Color(0xffDC2FFF),
+                color: c[i],
                 alignment: Alignment.center,
                 child: Text(
                   "${Questions[i]}",
