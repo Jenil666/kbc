@@ -16,6 +16,10 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 <p>
+<img src="https://user-images.githubusercontent.com/116253963/216515777-04c3121c-1f18-4f86-9d86-694e80411790.gif" height=22% eidth=22%>
+</p>
+
+<p>
 <img src="https://user-images.githubusercontent.com/116253963/214773209-13a46415-e557-48c5-846f-7567243b6f12.PNG" height=22% eidth=22%>
 </p>
 
@@ -32,9 +36,7 @@ samples, guidance on mobile development, and a full API reference.
 </p>
 ![kbc-3]()
 
-<p>
-<img src="https://user-images.githubusercontent.com/116253963/216515777-04c3121c-1f18-4f86-9d86-694e80411790.gif" height=22% eidth=22%>
-</p>
+
 
 ![ezgif-3-eacb683c5f]()
 
